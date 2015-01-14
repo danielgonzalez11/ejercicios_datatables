@@ -457,10 +457,31 @@
     <script>
           $(document).ready(function() {
     		$('#miTabla').dataTable({
-    			"order": [[ 4, "desc" ],[ 3, "asc" ]]
+    		"order" : [[0,"asc"],[4,"false"]],	
+        	"columnDefs": [
+	            {
+	                "targets": [ 2 ],
+	                "visible": false,
+	                "searchable": true
+	            },
+	            {
+	                "targets": [ 3 ],
+	                "visible": false,
+	                "searchable": false
+	            },
+	            {
+	            	"targets": [ 4 ],
+	            	"ordering": false
+	            }]
     		});
 		});
+
+
     </script>
 </body>
 
 </html>
+
+<!--Los datos aparecen ordenados por la primera columna de forma alfabética
+Las columnas Platform y Engine version deben permanecer invisibles, sin embargo se pueden hacer búsquedas (filtrados) por la primera de ellas. 
+No se pueden ordenar los datos por la última columna (CSS grade).-->
