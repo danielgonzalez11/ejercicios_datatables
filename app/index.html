@@ -20,7 +20,7 @@
 
 <body>
 
-    <table>
+    <table id="miTabla">
         <thead>
             <tr>
                 <th>Rendering engine</th>
@@ -454,6 +454,14 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script>
+          $(document).ready(function() {
+    		$('#miTabla').dataTable({
+    			 "paging":   false,
+        		 "filter": false
+    		});
+		});
+    </script>
 </body>
 
 </html>
